@@ -1,0 +1,18 @@
+<div class="status">{{ getStatusMessage() }}</div>
+
+<button
+  [class.spinner]="microphoneSpinner"
+  [disabled]="microphoneSpinner"
+  id="talkback-btn"
+  mat-fab
+  color="primary"
+  (click)="onStartStop()"
+>
+  <mat-icon *ngIf="!microphoneSpinner" [ngSwitch]="listenState">
+    <mat-icon *ngSwitchCase="'listening'">mic</mat-icon>
+    <mat-icon *ngSwitchCase="'stopped'">mic_off</mat-icon>
+    <mat-icon *ngSwitchCase="'processing'">stop</mat-icon>
+    <mat-icon *ngSwitchCase="'speaking'">stop</mat-icon>
+    <mat-icon *ngSwitchCase="'paused'">mic_off</mat-icon>
+  </mat-icon>
+</button>

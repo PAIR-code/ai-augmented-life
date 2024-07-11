@@ -1,0 +1,3 @@
+pushd conversational-toolkit/client
+npm run lint
+popd
