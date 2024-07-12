@@ -1,0 +1,13 @@
+.DS_Store
+client/node_modules
+client/.angular
+server/dist
+server/bin
+server/lib
+server/agents/physics_expert/content
+.venv
+__pycache__
+.env
+logs/
+__pycache__/
+pyvenv.cfg

@@ -1,0 +1,25 @@
+  {
+    "question": "What were the different theories about the cause of the Black Death?",
+    "answers": [
+      {
+        "answer": "Religion: God sent the plague as a punishment for people's sins.",
+        "key": "religion",
+        "hasAnswered": "false"
+      },
+      {
+        "answer": "Miasma: 'bad air' or smells caused by decaying rubbish.",
+        "key": "miasma",
+        "hasAnswered": "false"
+      },
+      {
+        "answer": "Four Humours: most physicians believed that disease was caused by an imbalance in the Four Humours.",
+        "hasAnswered": "false",
+        "key": "four humours"
+      },
+      {
+        "answer": "Outsiders: strangers or witches had caused the disease.",
+        "hasAnswered": "false",
+        "key": "outsiders"
+      }
+    ]
+  }

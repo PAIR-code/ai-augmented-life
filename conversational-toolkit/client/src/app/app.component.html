@@ -1,0 +1,83 @@
+<!--
+  Copyright 2024 Google LLC.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side"
+    ><app-agent-selector
+      [selectedAgentId]="agentId"
+      (selectedAgentIdChange)="handleAgentIdChange($event)"
+    ></app-agent-selector
+  ></mat-sidenav>
+
+  <mat-sidenav-content id="content" #content>
+    <mat-toolbar color="primary">
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>&nbsp;
+      <span>Conversational Client</span>
+    </mat-toolbar>
+
+    <!-- UI for selected agent -->
+    <ng-container
+      *ngComponentOutlet="
+        currentAgentConfig.component;
+        inputs: currentAgentConfig.inputs
+      "
+    />
+
+    <div>
+      <!-- Main conversation panel-->
+      <div class="conversation">
+        <div
+          *ngFor="
+            let msg of !currentAgentConfig.preferences.shouldTruncateChatHistory
+              ? conversation
+              : conversation.slice(-2)
+          "
+          class="message-container"
+          [class.message-user]="msg.author === 'human'"
+        >
+          <mat-chip-set *ngIf="msg.author === 'ai'">
+            <mat-chip>{{ msg.author }}</mat-chip>
+          </mat-chip-set>
+          <span class="message-content">{{ msg.content }}</span>
+        </div>
+      </div>
+      <div
+        class="conversation"
+        *ngIf="!currentAgentConfig.preferences.shouldHideChat"
+      >
+        <div class="message-container message-user" *ngIf="!!interimDialogLine">
+          <span class="message-content">{{ interimDialogLine }}</span>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button
+          *ngIf="conversation.length > 1"
+          mat-mini-fab
+          color="primary"
+          (click)="donwloadTranscript()"
+        >
+          <mat-icon>download</mat-icon>
+        </button>
+        <app-speech-recognizer
+          (newDialogLineEvent)="handleNewLineOfDialog($event)"
+          (newInterimDialogLineEvent)="handleNewInterimDialogLineEvent($event)"
+          (startListeningEvent)="handleStartListening()"
+        >
+        </app-speech-recognizer>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
