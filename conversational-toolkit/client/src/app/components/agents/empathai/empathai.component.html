@@ -1,0 +1,111 @@
+<!--
+  Copyright 2024 Google LLC.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<div class="welcome">
+  <h1>Empath.ai — A patient Conversation Simulator</h1>
+  <p>
+    Empath.ai developed with the NHS PyCom community to<br />train clinicians in
+    delivering difficult news to patients
+  </p>
+  <p style="text-align: justify; max-width: 400px; margin: auto">
+    In this simulation the patient, Eleanor, is a 70-year-old retired librarian
+    recently diagnosed with Alzheimer's disease. As the clinician caring for her
+    you must share this diagnosis in line with the UCLMS Mark Scheme. Your score
+    against this rubric will be automatically updated during the conversation.
+  </p>
+</div>
+<br />
+<div class="rubric">
+  <table class="rubric-table">
+    <thead>
+      <tr>
+        <th>Rubric</th>
+        <th>Score so far <br />(out of 10)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="even-row">
+        <td>Clarifies existing knowledge</td>
+        <td [class.green]="markingRubric.clarifiesExistingKnowledge > 0">
+          {{ markingRubric!.clarifiesExistingKnowledge }}
+        </td>
+      </tr>
+      <tr class="odd-row">
+        <td>Introduces purpose of conversation</td>
+        <td [class.green]="markingRubric.introducesPurposeOfConversation > 0">
+          {{ markingRubric!.introducesPurposeOfConversation }}
+        </td>
+      </tr>
+      <tr class="even-row">
+        <td>Uses warning shot</td>
+        <td [class.green]="markingRubric.usesWarningShot > 0">
+          {{ markingRubric!.usesWarningShot }}
+        </td>
+      </tr>
+      <tr class="odd-row">
+        <td>Explains what has happened</td>
+        <td [class.green]="markingRubric.explainsWhatHasHappened > 0">
+          {{ markingRubric!.explainsWhatHasHappened }}
+        </td>
+      </tr>
+      <tr class="even-row">
+        <td>Delivers information in small chunks</td>
+        <td [class.green]="markingRubric.deliversInformationInSmallChunks > 0">
+          {{ markingRubric!.deliversInformationInSmallChunks }}
+        </td>
+      </tr>
+      <tr class="odd-row">
+        <td>Checks understanding</td>
+        <td [class.green]="markingRubric.checksUnderstanding > 0">
+          {{ markingRubric!.checksUnderstanding }}
+        </td>
+      </tr>
+      <tr class="even-row">
+        <td>Allows time and space to answer questions</td>
+        <td
+          [class.green]="markingRubric.allowsTimeAndSpaceToAnswerQuestions > 0"
+        >
+          {{ markingRubric!.allowsTimeAndSpaceToAnswerQuestions }}
+        </td>
+      </tr>
+      <tr class="odd-row">
+        <td>Remains calm empathic non judgemental</td>
+        <td [class.green]="markingRubric.remainsCalmEmpathicNonJudgemental > 0">
+          {{ markingRubric!.remainsCalmEmpathicNonJudgemental }}
+        </td>
+      </tr>
+      <tr class="even-row">
+        <td>Demonstrates active listening follows cues</td>
+        <td
+          [class.green]="
+            markingRubric.demonstratesActiveListeningFollowsCues > 0
+          "
+        >
+          {{ markingRubric!.demonstratesActiveListeningFollowsCues }}
+        </td>
+      </tr>
+      <tr class="odd-row">
+        <td>Summarises conversation and agreed next steps</td>
+        <td
+          [class.green]="
+            markingRubric.summarisesConversationAndAgreedNextSteps > 0
+          "
+        >
+          {{ markingRubric!.summarisesConversationAndAgreedNextSteps }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

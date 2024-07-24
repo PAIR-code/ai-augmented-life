@@ -22,6 +22,7 @@ from .default_agent import DefaultAgent
 from .fake_agent import FakeAgent
 from .history_tutor.history_tutor import HistoryTutor
 from .physics_expert.physics_expert import PhysicsExpert
+from .empathai.empathai_agent import EmpathaiAgent
 
 
 # Create conversational agents. An agent is a ConversationalAgent subclass.
@@ -33,6 +34,7 @@ _AGENT_BY_ID: Final[Dict[str, Type[ConversationalAgent]]] = {
     "fake": FakeAgent,
     "history_tutor": HistoryTutor,
     "physics_expert": PhysicsExpert,
+    "empathai": EmpathaiAgent,
 }
 
 # Dict to keep track of instantiated agents.

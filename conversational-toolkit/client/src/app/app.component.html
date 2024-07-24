@@ -42,7 +42,7 @@
           *ngFor="
             let msg of !currentAgentConfig.preferences.shouldTruncateChatHistory
               ? conversation
-              : conversation.slice(-2)
+              : []
           "
           class="message-container"
           [class.message-user]="msg.author === 'human'"

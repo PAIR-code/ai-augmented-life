@@ -1,0 +1,34 @@
+h1,
+p {
+  text-align: center;
+}
+
+.welcome {
+  max-width: 600px;
+  margin: auto;
+  padding: 6px;
+}
+
+.rubric {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.rubric-table {
+  margin: auto;
+}
+
+.even-row {
+  background-color: cornsilk;
+  height: 2em;
+}
+
+.odd-row {
+  background-color: white;
+  height: 2em;
+}
+
+.green {
+  background-color: lightgreen;
+}

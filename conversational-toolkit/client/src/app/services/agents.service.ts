@@ -21,6 +21,7 @@ import {HistoryTutorComponent} from '@components/agents/history-tutor/history-tu
 import {FakeAgentComponent} from '@components/agents/fake-agent/fake-agent.component';
 import {DefaultAgentComponent} from '@components/agents/default-agent/default-agent.component';
 import {PhysicsExpertComponent} from '@components/agents/physics-expert/physics-expert.component';
+import {EmpathaiComponent} from '@components/agents/empathai/empathai.component';
 
 export interface AgentComponentConstructor {
   new (): Agent & Component;
@@ -88,6 +89,18 @@ export class AgentsService {
           inputs: {},
           preferences: {
             displayName: 'Physics Expert',
+          },
+        },
+      ],
+      [
+        'empathai',
+        {
+          component: EmpathaiComponent,
+          inputs: {},
+          preferences: {
+            displayName: 'empath.ai',
+            shouldTruncateChatHistory: true,
+            shouldHideChat: true,
           },
         },
       ],
