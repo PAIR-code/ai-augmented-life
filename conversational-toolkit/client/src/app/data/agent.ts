@@ -22,6 +22,7 @@ export const AGENT_IDS = [
   'fake',
   'history_tutor',
   'physics_expert',
+  'coordination_game',
 ] as const;
 export type AgentId = (typeof AGENT_IDS)[number];
 

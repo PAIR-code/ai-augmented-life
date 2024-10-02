@@ -21,6 +21,7 @@ import {HistoryTutorComponent} from '@components/agents/history-tutor/history-tu
 import {FakeAgentComponent} from '@components/agents/fake-agent/fake-agent.component';
 import {DefaultAgentComponent} from '@components/agents/default-agent/default-agent.component';
 import {PhysicsExpertComponent} from '@components/agents/physics-expert/physics-expert.component';
+import {CoordinationGameComponent} from '@components/agents/coordination-game/coordination-game.component';
 
 export interface AgentComponentConstructor {
   new (): Agent & Component;
@@ -88,6 +89,16 @@ export class AgentsService {
           inputs: {},
           preferences: {
             displayName: 'Physics Expert',
+          },
+        },
+      ],
+      [
+        'coordination_game',
+        {
+          component: CoordinationGameComponent,
+          inputs: {},
+          preferences: {
+            displayName: 'Coordination Game',
           },
         },
       ],
