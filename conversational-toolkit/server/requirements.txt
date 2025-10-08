@@ -5,7 +5,7 @@ google.cloud.texttospeech==2.16.3
 langchain==0.2.10
 langchain-core>=0.2.5
 langchain-google-vertexai==1.0.5
-langchain-text-splitters==0.2.1
+langchain-text-splitters==0.3.9
 model-alignment==0.1
 pylint==3.2.5
 python-dotenv==1.0.1
