@@ -8,6 +8,6 @@ langchain-google-vertexai==1.0.5
 langchain-text-splitters==0.2.1
 model-alignment==0.1
 pylint==3.2.5
-python-dotenv==1.0.1
+python-dotenv==1.2.2
 rich==13.7.1
 watchdog==4.0.1
