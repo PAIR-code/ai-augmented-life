@@ -16,7 +16,6 @@
 import logging
 import json
 import flask
-import google.cloud.texttospeech_v1 as texttospeech
 from langchain_core.messages import HumanMessage, AIMessage
 
 from agents.agents import AgentState
@@ -31,30 +30,9 @@ agent_registry = AgentRegistry()
 
 
 # Combine these to save ourselves a server roundtrip.
-@app.route("/tts", methods=["POST", "GET"])
+@app.route("/tts", methods=["POST"])
 def tts():
-    """Takes text query parameter and returns audio file bytes."""
-    text = flask.request.args.get("text") or flask.request.form.get("text")
-    text = text.replace("*", "").replace("#", "")
-
-    synthesis_input = texttospeech.SynthesisInput(text=text)
-    voice = texttospeech.VoiceSelectionParams(
-        language_code="en-US", name="en-US-Wavenet-D"
-    )
-    audio_config = texttospeech.AudioConfig(
-        audio_encoding=texttospeech.AudioEncoding.MP3
-    )
-    response = tts_client.synthesize_speech(
-        input=synthesis_input, voice=voice, audio_config=audio_config
-    )
-    audio_bytes = response.audio_content
-
-    # Return audio base64 string
-    return (
-        audio_bytes,
-        200,
-        {"Content-Type": "audio/mpeg", "Access-Control-Allow-Origin": "*"},
-    )
+  return ("Text-to-Speech is disabled in this obsolete prototype.", 501)
 
 
 @app.route("/_ah/warmup")
