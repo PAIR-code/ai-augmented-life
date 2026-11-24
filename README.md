@@ -1,3 +1,5 @@
+> **Archived:** This research prototype is no longer maintained.
+
 # AI Augmented Life
 
 The AI-Augmented Life is a project within the People+AI Research (PAIR) initiative to explore the ways in which Generative AI might affect our lives in coming years.
